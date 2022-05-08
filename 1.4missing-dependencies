@@ -1,0 +1,34 @@
+elias@debian:~$ docker run -it ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+289cf404cf583609407d3f7cdf181d9dc061a7f53fc6f7705584f28d4cd1c28e
+
+elias@debian:~$ docker container ls
+CONTAINER ID   IMAGE     COMMAND                   CREATED         STATUS         PORTS     NAMES
+12073b2d667d   ubuntu    "sh -c 'echo \"Input …"   7 seconds ago   Up 6 seconds             silly_poitras
+
+elias@debian:~$ docker exec -it silly_poitras bash 
+
+root@12073b2d667d:/# apt update
+
+
+root@12073b2d667d:/# apt install curl
+
+
+root@289cf404cf58:/# curl helsinki.fi
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://www.helsinki.fi/">here</a>.</p>
+</body></html>
+
+Input website:
+helsinki.fi
+Searching..
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="https://www.helsinki.fi/">here</a>.</p>
+</body></html>
