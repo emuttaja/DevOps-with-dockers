@@ -1,0 +1,4 @@
+elias@debian:~$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+elias@debian:~$ docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
