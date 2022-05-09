@@ -5,3 +5,19 @@ devopsdockeruh/simple-web-service   alpine    fd312adc88e0   14 months ago   15.
 
 The ubuntu version is a lot bigger.
 
+elias@debian:~$ docker run fd3
+elias@debian:~$ docker container ls
+CONTAINER ID   IMAGE     COMMAND                 CREATED          STATUS          PORTS     NAMES
+2e30771cf24d   fd3       "/usr/src/app/server"   17 seconds ago   Up 13 seconds             elated_chaum
+elias@debian:~$ docker exec -it elated_chaum sh
+/usr/src/app # /usr/src/app# tail -f ./text.log
+sh: /usr/src/app#: not found
+/usr/src/app # tail -f .text.log
+tail: can't open '.text.log': No such file or directory
+tail: no files
+/usr/src/app # tail -f ./text.log
+2022-05-09 12:17:55 +0000 UTC
+2022-05-09 12:17:57 +0000 UTC
+2022-05-09 12:17:59 +0000 UTC
+2022-05-09 12:18:01 +0000 UTC
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
