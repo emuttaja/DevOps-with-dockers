@@ -1,0 +1,4 @@
+elias@debian:~/hacking/devops_with_dockers$ docker run -v $(pwd)/volumes_exercise/text.log:/usr/src/app/text.log devopsdockeruh/simple-web-service
+
+
+bruh the target file needs to be created on the HOST machine before running this command. It took me ages to figure out.. I thought I was going crazy
