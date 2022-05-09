@@ -1,2 +1,2 @@
 # DevOps-with-dockers
-devops moodle course
+devops mooc course
