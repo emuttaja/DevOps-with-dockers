@@ -1,0 +1,3 @@
+elias@debian:~/hacking/devops_with_dockers$ docker build . -t web-server
+
+elias@debian:~/hacking/devops_with_dockers$ docker run web-server
