@@ -1,0 +1,3 @@
+elias@debian:~$ docker run -p 127.0.0.1:8080:8080 99f99 server
+
+99f99 being the 'devopsdockeruh/simple-web-service' -image.
