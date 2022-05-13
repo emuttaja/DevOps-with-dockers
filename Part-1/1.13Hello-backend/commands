@@ -1,0 +1,2 @@
+command used to start the container: 
+elias@debian:~/hacking/devops_with_dockers/material-applications/material-applications/example-backend$ docker run -p 8080:8080 example-backend
