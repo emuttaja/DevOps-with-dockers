@@ -1,0 +1,23 @@
+# command used:
+# docker run -p 8080:8080 example-backend
+
+the dockerfile:
+
+# pull a debian 11 based golang 1.16 image from dockerhub
+FROM golang:1.16.15-bullseye
+
+# set workdir
+WORKDIR /usr/src/app
+
+# copy the project
+COPY . .
+
+# build it 
+RUN go build
+
+EXPOSE 8080
+
+ENV REQUEST_ORIGIN=http://localhost:5000/
+
+# start the project with needed environment variables
+CMD PORT=8080 ./server
