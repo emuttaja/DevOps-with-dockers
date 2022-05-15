@@ -1,7 +1,7 @@
 # command used:
 # docker run -p 8080:8080 example-backend
 
-the dockerfile:
+# the dockerfile:
 
 # pull a debian 11 based golang 1.16 image from dockerhub
 FROM golang:1.16.15-bullseye
