@@ -1,0 +1,50 @@
+# I have no idea wtf is wrong with this.. The connection to the database works fine, but when trying to post stuff to it I get 403'd... 
+# I spent way too much time on this so this will do..
+
+version: '3.7'
+
+services:
+    backend:
+      image: example-backend
+      restart: unless-stopped
+      ports: 
+        - 8080:8080
+      container_name: backend
+      environment:
+        - REDIS_HOST=redis
+        - POSTGRES_HOST=db
+      depends_on:
+        - db
+
+        
+    frontend: 
+      image: example-frontend
+      restart: unless-stopped
+      ports: 
+        - 5000:5000
+      container_name: frontend
+
+    redis:
+      image: redis:7.0-bullseye
+      restart: unless-stopped
+      ports:
+        - 6379:6379
+      volumes:
+        - ./redis_volume/:/data
+      container_name: redis
+
+    db:
+      image: postgres:alpine
+      restart: unless-stopped
+      container_name: db_backend
+      volumes:
+        - database:/var/lib/postgresql/data
+      ports:
+        - 5432:5432
+      environment:
+        - POSTGRES_PASSWORD=postgres 
+        - POSTGRES_USER=postgres 
+        - POSTGRES_DB=postgres
+        
+volumes:
+  database:
